@@ -12,7 +12,7 @@ carrito.forEach((item) => {
             <td>${item.nombre}</td>
             <td>${item.cantidad}</td>
             <td>$ ${item.precio}</td>
-            <td><a href="http://127.0.0.1:5500/producto.html#codigoprod">Detalle</a></td>
+            <td><a href="https://jp-rodriguez.github.io/cursofrontend2/producto.html#codigoprod">Detalle</a></td>
             <td><button id="sumar">+</button></td>
             <td><button id="restar">-</button></td>
         </tr>
