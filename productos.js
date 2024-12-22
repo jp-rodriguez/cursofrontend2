@@ -58,7 +58,7 @@ listadoProductos.innerHTML = "<h2>Productos</h2>";
 productos.forEach((producto) => {
   const html = `
         <br>
-        <img src=${producto.imagen} width="100" height="100">
+        <img src=${producto.imagen} width="100" height="100" alt="articulo en venta">
         <article data-id="${producto.id}">
           <h3 id="codigoprod">${producto.nombre}</h3>
           <p>${producto.descripcion}</p>
