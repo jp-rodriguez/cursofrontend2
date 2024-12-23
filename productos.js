@@ -1,3 +1,4 @@
+/*
 const productos = [
   {
     id: 1,
@@ -48,6 +49,17 @@ const productos = [
     stock: 10,
   },
 ];
+*/
+let productos;
+const cargarProductos = async () => {
+  try {
+    const response = await fetch("../productos.json");
+    productos = await response.json();
+    mostrarProductos();
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -55,6 +67,7 @@ const listadoProductos = document.querySelector(".listado-productos");
 
 listadoProductos.innerHTML = "<h2>Productos</h2>";
 
+const mostrarProductos = () => {
 productos.forEach((producto) => {
   const html = `
         <br>
@@ -69,7 +82,7 @@ productos.forEach((producto) => {
 
   listadoProductos.innerHTML += html;
 });
-
+};
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("agregar")) {
     const id = event.target.closest("article").dataset.id;
