@@ -50,6 +50,7 @@ const productos = [
   },
 ];
 */
+
 let productos;
 const cargarProductos = async () => {
   try {
@@ -61,6 +62,8 @@ const cargarProductos = async () => {
   }
 };
 
+//cargarProductos();
+
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const listadoProductos = document.querySelector(".listado-productos");
@@ -68,8 +71,8 @@ const listadoProductos = document.querySelector(".listado-productos");
 listadoProductos.innerHTML = "<h2>Productos</h2>";
 
 const mostrarProductos = () => {
-productos.forEach((producto) => {
-  const html = `
+  productos.forEach((producto) => {
+    const html = `
         <br>
         <img src=${producto.imagen} width="100" height="100" alt="articulo en venta">
         <article data-id="${producto.id}">
@@ -80,9 +83,10 @@ productos.forEach((producto) => {
         </article>
     `;
 
-  listadoProductos.innerHTML += html;
-});
+    listadoProductos.innerHTML += html;
+  });
 };
+
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("agregar")) {
     const id = event.target.closest("article").dataset.id;
